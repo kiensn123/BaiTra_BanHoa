@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập Nhật Cây - Tree Shop</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-gradient text-white text-center py-4">
+        <h1 class="display-4 fw-bold">Tree Shop <i class="fas fa-seedling"></i></h1>
+        <nav class="mt-2">
+            <a href="/" class="text-white mx-3 nav-link-custom">Trang chủ</a>
+        </nav>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="card shadow-lg p-4 form-card mx-auto" style="max-width: 600px;">
+            <h2 class="text-center text-success mb-4">Cập Nhật Cây</h2>
+            <form action="/update/<%= tree._id %>" method="POST">
+                <div class="mb-3">
+                    <label for="treename" class="form-label fw-bold">Tên cây:</label>
+                    <input type="text" class="form-control form-control-lg" id="treename" name="treename" value="<%= tree.treename %>" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label fw-bold">Mô tả:</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required><%= tree.description %></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label fw-bold">URL Hình Ảnh:</label>
+                    <input type="text" class="form-control" id="image" name="image" value="<%= tree.image %>">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success btn-lg"><i class="fas fa-save"></i> Lưu Cập Nhật</button>
+                    <a href="/" class="btn btn-outline-secondary btn-lg"><i class="fas fa-arrow-left"></i> Quay lại</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-gradient text-white text-center py-4 mt-auto">
+        <p class="mb-0">© 2025 Tree Shop - Cửa hàng cây cảnh <i class="fas fa-leaf"></i></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
